@@ -2,287 +2,132 @@
   <v-layout row wrap>
     <v-flex xs12>
       <v-carousel
+        class="carousel-items"
         cycle
         height="400"
         hide-delimiter-background
         show-arrows-on-hover
-      >
-        <v-carousel-item v-for="item in items" :src="item.src" :key="item.id">
-          <div class="title">
-            {{ item.title }}
-          </div>
-        </v-carousel-item>
+        ><div class="title">
+          <v-carousel-item v-for="item in items" :src="item.src" :key="item.id">
+            <div class="title my-10 mx-10 px-lg-15">
+              <h1>{{ item.title }}</h1>
+            </div>
+            <div class="my-10 mx-10">
+              <h2>{{ item.msg }}</h2>
+            </div>
+            <div>
+              <v-btn
+                class="ma-2 my-10 mx-10"
+                outlined
+                color="red"
+                dark
+                border-2
+                depressed
+                large
+                >{{ item.btn }}
+              </v-btn>
+            </div>
+          </v-carousel-item>
+        </div>
       </v-carousel>
-      <h2 class="cardTitle">Browse Categories</h2>
-      
-    <div class="cardsContainer">
-  <v-app id="inspire">
-    <v-card
-      :loading="loading"
-      class="mx-auto my-12"
-      max-width="374"
-    >
-      <template slot="progress">
-        <v-progress-linear
-          color="deep-purple"
-          height="10"
-          indeterminate
-        ></v-progress-linear>
-      </template>
-  
-      <v-img
-        height="250"
-        src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849821_960_720.jpg"
-      ></v-img>
-  
-      <v-card-title>Tech Content</v-card-title>
-  
-      <v-card-text>
-        <v-row
-          align="center"
-          class="mx-0"
-        >
-          <v-rating
-            :value="4.5"
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-  
-          <div class="grey--text ml-4">
-            4.5 (413)
-          </div>
-        </v-row>
-  
-        <div class="my-4 subtitle-1">
-          Also Available
+      <h1 class="cardTitle my-7" red--text>Browse Categories</h1>
+
+      <div class="cardsContainer">
+        <div id="inspire" class="v-app-wrap">
+          <v-card :loading="loading" class="mx-auto my-7" max-width="250">
+            <v-img
+              height="250"
+              src="https://media.istockphoto.com/photos/graphic-designer-drawing-sketches-logo-design-picture-id1191609321?b=1&k=6&m=1191609321&s=170667a&w=0&h=mRMdYSZgLKi7BR51IiQClkswoFcrwX4wQWn0qohEbnQ="
+            ></v-img>
+
+            <v-card-text>
+              <v-row align="center" class="mx-0"> </v-row>
+              <v-card-title class="cardLabel mx-2">Graphic Design</v-card-title>
+              <div class="my-4 subtitle-1"></div>
+            </v-card-text>
+          </v-card>
+          <v-card :loading="loading" class="mx-auto my-7" max-width="300">
+            <v-img
+              height="250"
+              src="https://media.istockphoto.com/photos/developing-programming-working-in-a-software-engineers-code-tech-on-picture-id1128132157?b=1&k=6&m=1128132157&s=170667a&w=0&h=afUW9_OVl740JwkMWYeDeXCLGyJWLroHdHMB8r8XD4o="
+            ></v-img>
+
+            <v-card-text>
+              <v-row align="center" class="mx-0"> </v-row>
+              <v-card-title class="cardLabel mx-0">
+                <p>Programming and</p>
+                <p>Technology</p>
+              </v-card-title>
+            </v-card-text>
+          </v-card>
+          <v-card :loading="loading" class="mx-auto my-7" max-width="320">
+            <v-img
+              height="250"
+              src="https://cdn.pixabay.com/photo/2016/10/09/08/32/digital-marketing-1725340__340.jpg"
+            ></v-img>
+
+            <v-card-text>
+              <v-row align="center" class="mx-0"> </v-row>
+              <v-card-title class="cardLabel mx-0"
+                >Digital Marketing and Sales
+              </v-card-title>
+              <div class="my-4 subtitle-1"></div>
+            </v-card-text>
+          </v-card>
+          <v-card :loading="loading" class="mx-auto my-7" max-width="300">
+            <v-img
+              height="250"
+              src="https://cdn.pixabay.com/photo/2017/08/30/07/56/money-2696234__340.jpg"
+            ></v-img>
+
+            <v-card-text>
+              <v-row align="center" class="mx-0"> </v-row>
+              <v-card-title class="cardLabel mx-10">Business</v-card-title>
+              <div class="my-4 subtitle-1"></div>
+            </v-card-text>
+          </v-card>
         </div>
-   <div>Design Job</div>
-      </v-card-text>
-  
-      <v-divider class="mx-4"></v-divider>
-  
-      <v-card-title>Today's availability</v-card-title>
-  
-      <v-card-text>
-        <v-chip-group
-          v-model="selection"
-          active-class="deep-purple accent-4 white--text"
-          column
-        >
-          <v-chip>{{new Date().toLocaleTimeString()}}</v-chip>
-  
-          <v-chip>{{new Date().toLocaleDateString()}}</v-chip>
-  
-         
-  
-         
-        </v-chip-group>
-      </v-card-text>
-  
-      <v-card-actions>
-        <v-btn
-          color="deep-purple lighten-2"
-          text
-          @click="reserve"
-        >
-          Reserve
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-     <v-card
-      :loading="loading"
-      class="mx-auto my-12"
-      max-width="374"
-    >
-      <template slot="progress">
-        <v-progress-linear
-          color="deep-purple"
-          height="10"
-          indeterminate
-        ></v-progress-linear>
-      </template>
-  
-      <v-img
-        height="250"
-        src="https://cdn.pixabay.com/photo/2014/05/02/21/49/blogging-336375_960_720.jpg"
-      ></v-img>
-  
-      <v-card-title>Tech Content</v-card-title>
-  
-      <v-card-text>
-        <v-row
-          align="center"
-          class="mx-0"
-        >
-          <v-rating
-            :value="4.5"
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-  
-          <div class="grey--text ml-4">
-            4.5 (413)
-          </div>
-        </v-row>
-  
-        <div class="my-4 subtitle-1">
-          Also Available
-        </div>
-   <div>Design Job</div>
-      </v-card-text>
-  
-      <v-divider class="mx-4"></v-divider>
-  
-      <v-card-title>Today's availability</v-card-title>
-  
-      <v-card-text>
-        <v-chip-group
-          v-model="selection"
-          active-class="deep-purple accent-4 white--text"
-          column
-        >
-          <v-chip>{{new Date().toLocaleTimeString()}}</v-chip>
-  
-          <v-chip>{{new Date().toLocaleDateString()}}</v-chip>
-  
-         
-  
-         
-        </v-chip-group>
-      </v-card-text>
-  
-      <v-card-actions>
-        <v-btn
-          color="deep-purple lighten-2"
-          text
-          @click="reserve"
-        >
-          Reserve
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-    <v-card
-      :loading="loading"
-      class="mx-auto my-12"
-      max-width="374"
-    >
-      <template slot="progress">
-        <v-progress-linear
-          color="deep-purple"
-          height="10"
-          indeterminate
-        ></v-progress-linear>
-      </template>
-  
-      <v-img
-        height="250"
-        src="https://media.istockphoto.com/photos/man-applying-for-a-job-on-the-internet-picture-id475352876?b=1&k=6&m=475352876&s=170667a&w=0&h=0Zz6J73ebpRlUIg-Ilrx-FG5nPXPss8YHbiaY10_L8Y="
-      ></v-img>
-  
-      <v-card-title>Tech Content</v-card-title>
-  
-      <v-card-text>
-        <v-row
-          align="center"
-          class="mx-0"
-        >
-          <v-rating
-            :value="4.5"
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-  
-          <div class="grey--text ml-4">
-            4.5 (413)
-          </div>
-        </v-row>
-  
-        <div class="my-4 subtitle-1">
-          Also Available
-        </div>
-   <div>Design Job</div>
-      </v-card-text>
-  
-      <v-divider class="mx-4"></v-divider>
-  
-      <v-card-title>Today's availability</v-card-title>
-  
-      <v-card-text>
-        <v-chip-group
-          v-model="selection"
-          active-class="deep-purple accent-4 white--text"
-          column
-        >
-          <v-chip>{{new Date().toLocaleTimeString()}}</v-chip>
-  
-          <v-chip>{{new Date().toLocaleDateString()}}</v-chip>
-  
-         
-  
-         
-        </v-chip-group>
-      </v-card-text>
-  
-      <v-card-actions>
-        <v-btn
-          color="deep-purple lighten-2"
-          text
-          @click="reserve"
-        >
-          Reserve
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-app>
-</div>
+      </div>
     </v-flex>
   </v-layout>
 </template>
 <script>
 export default {
-    data: () => ({
-    loading: false,
-    selection: 1,
-  }),
-
   methods: {
-    reserve () {
-      this.loading = true
+    reserve() {
+      this.loading = true;
 
-      setTimeout(() => (this.loading = false), 2000)
-    },
+      setTimeout(() => (this.loading = false), 2000);
+    }
   },
   data() {
     return {
+      loading: false,
+      selection: 1,
       items: [
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
-          id: "01",
-          title: "Just Trying"
+          src:
+            "https://cdn.pixabay.com/photo/2020/04/03/21/52/home-office-5000280__340.jpg",
+          title: "Get your job done by Expert Freelancers",
+          msg: "Get your job done by Expert Freelancers",
+          btn: "Connect now"
         },
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-            id: "02",
-          title: "Getting In shape"
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-          id: "03",
-          title: "Error Caught"
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+          src:
+            "https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090__340.jpg",
           id: "02",
-          title: "Editor, Stop Complaining"
+          title: "Find exciting jobs fromclients all over the world",
+          msg: "Find exciting jobs fromclients all over the world",
+          btn: "Connect now"
+        },
+        {
+          src:
+            "https://cdn.pixabay.com/photo/2015/04/20/13/17/work-731198__340.jpg",
+          id: "05",
+          title: "Simple, secure, collaborative work space",
+          msg:
+            "Enjoy our secure, easy to use workspace created for client-freelancer collaboration",
+          btn: "Connect now"
         }
       ],
       slides: ["First", "Second", "Third", "Fourth", "Fifth"]
@@ -292,17 +137,37 @@ export default {
 </script>
 <style scoped>
 .title {
-  position: absolute;
+  position: initial;
   bottom: 50px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  font-size: 2em;
+  font-size: 20em;
+  font: roboto;
   padding: 20px;
 }
-.cardTitle{
-  text-align: center
+.carousel-items {
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.cardsContainer{
+.cardTitle {
+  text-align: center;
+  color: brown;
+}
+.cardsContainer {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding-top: 10px;
+}
+
+.v-app-wrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.btn {
+  border: 20px;
+  border-color: red;
+  margin: 2px;
 }
 </style>
