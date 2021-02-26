@@ -5,6 +5,7 @@
         <v-toolbar-title>Simple App</v-toolbar-title>
         <v-spacer></v-spacer>
         <router-link class="text-decoration-none" to="/Home"
+          ><v-icon color=" darken ">mdi-home</v-icon
           ><v-btn class="text-decoration-none" text rounded
             >Home
           </v-btn></router-link
