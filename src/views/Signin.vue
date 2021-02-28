@@ -17,7 +17,7 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-actions>
-          <v-btn rounded color="success">Register</v-btn>
+          <v-btn rounded color="success" class="mr-6">Register</v-btn>
           <v-btn rounded color="info">Login</v-btn>
         </v-actions>
       </v-card>

@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex>
+    <v-flex xs12>
       <div class="blue-grey lighten-4">
         <v-carousel
           class="carousel-items"
@@ -13,24 +13,25 @@
               v-for="item in items"
               :src="item.src"
               :key="item.id"
-            >
-              <div class="title my-10 mx-10 px-lg-15">
-                <h1>{{ item.title }}</h1>
-              </div>
-              <div class="my-10 mx-10">
-                <h2>{{ item.msg }}</h2>
-              </div>
-              <div>
-                <v-btn
-                  class="ma-2 my-10 mx-10"
-                  outlined
-                  color="red"
-                  dark
-                  border-2
-                  depressed
-                  large
-                  >{{ item.btn }}
-                </v-btn>
+              ><div class="title">
+                <div class="my-10 mx-10 px-lg-15 mb-16">
+                  <h1>{{ item.title }}</h1>
+                </div>
+                <div class="my-10 mx-10 mb-16">
+                  <h2>{{ item.msg }}</h2>
+                </div>
+                <div>
+                  <v-btn
+                    class="ma-16 my-10 mx-10 mb-16 "
+                    outlined
+                    color="red"
+                    dark
+                    border-2
+                    depressed
+                    large
+                    >{{ item.btn }}
+                  </v-btn>
+                </div>
               </div>
             </v-carousel-item>
           </div>
@@ -604,11 +605,9 @@ export default {
   color: white;
   font-size: 20em;
   font: roboto;
-  padding: 20px;
+  padding: 10px;
 }
-.carousel-items {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+
 .cardTitle,
 .all-categ {
   text-align: center;
