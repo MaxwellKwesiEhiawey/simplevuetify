@@ -318,14 +318,16 @@ export default {
         {
           src: require("../assets/images/home1.jpg"),
           title: "Get your job done by Expert Freelancers",
-          msg: "Get your job done by Expert Freelancers",
+          msg:
+            "Connect with thousands of freelancers all over the world who are ready to offer top quality services",
           btn: "Connect now"
         },
         {
           src: require("../assets/images/home-slider-3.jpg"),
           id: "02",
-          title: "Find exciting jobs fromclients all over the world",
-          msg: "Find exciting jobs from clients all over the world",
+          title: "Find exciting jobs from clients all over the world",
+          msg:
+            "Apply for top freelance jobs posted by clients from all over the world",
           btn: "Connect now"
         },
         {
