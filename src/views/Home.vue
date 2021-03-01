@@ -8,17 +8,17 @@
           height="500"
           hide-delimiter-background
           show-arrows-on-hover
-          ><div class="title">
+          ><div>
             <v-carousel-item
               v-for="item in items"
               :src="item.src"
               :key="item.id"
-              ><div class="title">
-                <div class="my-16 mx-8 px-8 mb-16 mr-16">
+              ><div>
+                <div class=" my-16 mx-8 px-8 mb-16 mr-16">
                   <h1>{{ item.title }}</h1>
                 </div>
                 <div size="12" class="my-16 mx-16 mb-16">
-                  <h5>{{ item.msg }}</h5>
+                  <h4>{{ item.msg }}</h4>
                 </div>
                 <div>
                   <v-btn
@@ -36,7 +36,7 @@
             </v-carousel-item>
           </div>
         </v-carousel>
-        <h1 class="cardTitle my-7" red--text>Browse Categories</h1>
+        <h1 class="cardTitle my-16 pt-16" red--text>Browse Categories</h1>
 
         <div class="cardsContainer">
           <div v-for="picture in browseCategories" :key="picture.bp">
@@ -56,13 +56,13 @@
             </div>
           </div>
         </div>
+        <div>
+          <p class="all-categ py-16 pa-10">
+            Not finding what you want? See all categories
+          </p>
+        </div>
       </div>
 
-      <div>
-        <p class="all-categ py-10 pa-10">
-          Not finding what you want? See all categories
-        </p>
-      </div>
       <div class="connect-title py-10 ">
         <h1 class="h1-tag px-0 ">How</h1>
         <h1 class="h2-tag px-5">Connect</h1>
@@ -77,19 +77,17 @@
           v-for="connect in Connection"
           :key="connect.urlImg"
         >
-          <v-card flat class="text-xs-center ma-10">
-            <v-responsive class="pt-1">
-              <v-avatar size="90" class="grey lighten-2 px-0 mx-16">
-                <v-img :src="connect.avImg"> </v-img>
-              </v-avatar>
+          <v-card flat class="text-xs-center ma-6">
+            <v-responsive class=" ml-6 avImage px-16">
+              <v-img :src="connect.avImg"> </v-img>
             </v-responsive>
             <v-card-text>
               <div>
-                <h2 class="heading mx-1 py-3 black--text">
+                <h2 class="heading mx- px-10 py-3 black--text">
                   {{ connect.avTitle }}
                 </h2>
               </div>
-              <div class="subheading black--text">{{ connect.avMsg }}</div>
+              <div class="subheading black--text mx-8">{{ connect.avMsg }}</div>
             </v-card-text>
           </v-card>
         </v-flex>
@@ -129,7 +127,7 @@
                 max-width="270"
               >
                 <v-responsive class="pt-6">
-                  <v-avatar size="150" class="grey lighten-2 my-0  pt-1 mx-16">
+                  <v-avatar size="150" class=" grey lighten-2 my-0  pt-1 mx-16">
                     <v-img :src="freeLancer.urlImg"> </v-img>
                   </v-avatar>
                 </v-responsive>
@@ -400,7 +398,7 @@ export default {
           avTitle: "Connect with Freelancers",
           avMsg:
             "Search freelancers, view freelancer profiles and accept job applications from freelancers",
-          avImg: require("../assets/images/Group 1254.png")
+          avImg: require("../assets/images/Group 1266.png")
         },
         {
           avTitle: "Collaborate on project",
@@ -412,7 +410,7 @@ export default {
           avTitle: "Rate Freelancer",
           avMsg:
             "Complete jobs, make payment and rate freelancers after the project is done",
-          avImg: require("../assets/images/Group 1262.png")
+          avImg: require("../assets/images/Group 1254.png")
         }
       ],
       recentJobs: [
@@ -451,7 +449,9 @@ export default {
   font: roboto;
   padding: 10px;
 }
-
+.title {
+  padding-right: 80%;
+}
 .cardTitle,
 .all-categ {
   text-align: center;
@@ -460,8 +460,11 @@ export default {
 .connect-title {
   text-align: center;
   display: inline-flex;
-  padding-left: 560px;
+  padding-left: 40%;
   color: rgb(16, 67, 116);
+}
+.avImage {
+  width: 60%;
 }
 .h2-tag {
   color: brown;
