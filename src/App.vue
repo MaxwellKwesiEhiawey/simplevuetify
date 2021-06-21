@@ -25,7 +25,7 @@
         <router-link class="text-decoration-none" to="/SignIn"
           ><v-btn class="text-decoration-none" text rounded
             ><v-icon small left color=" darken ">mdi-account-circle</v-icon>
-            Signin</v-btn
+            Sign in</v-btn
           ></router-link
         >
         <router-link class="text-decoration-none" to="/LogOut"
